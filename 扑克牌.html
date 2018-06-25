@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        我手中有一堆扑克牌， 但是观众不知道它的顺序。
+
+        第一步， 我从牌顶拿出一张牌， 放到桌子上。
+        第二步， 我从牌顶再拿一张牌， 放在手上牌的底部。
+        第三步， 重复第一步、第二步的操作， 直到我手中所有的牌都放到了桌子上。
+
+        最后， 观众可以看到桌子上牌的顺序是：13\12\11\10\9\8\7\6\5\4\3\2\1
+        请问， 我刚开始拿在手里的牌的顺序是什么？
+    </div>
+</body>
+<script>
+    // let arr = [1,2,2,3,4,4,5,5,6,6,7,7,8,9];
+    // let set = new Set(arr);
+    // console.log([set]);
+    function fn1(){
+        for(var i=0;i<4;i++){
+            var tc=setTimeout(function(i){
+                console.log(i);
+                clearTimeout(4);
+                console.log('tc'+ tc);
+            },1000,i);
+        }
+    }
+    fn1();
+</script>
+</html>

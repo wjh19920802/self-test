@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .wrap,.content,.content,.item,.inner>div {
+            width: 200px;
+            text-align: center;
+         }
+        .item {
+            height: 50px;
+            overflow: hidden;
+        }
+        .inner>div {
+            height: 50px;
+            line-height: 50px;
+        }
+        li {
+            list-style: none;
+        }
+        .item {
+            background: greenyellow;
+        }
+        .title {
+            height: 50px;
+            line-height: 50px;
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="content">
+            <li class="item">
+                <div class="title">第一个菜单</div>
+                <div class="inner">
+                    <div>aaa</div>
+                    <div>bbb</div>
+                    <div>ccc</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="title">第二个菜单</div>
+                <div class="inner">
+                    <div>aaa</div>
+                    <div>bbb</div>
+                    <div>ccc</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="title">第三个菜单</div>
+                <div class="inner">
+                    <div>aaa</div>
+                    <div>bbb</div>
+                    <div>ccc</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="title">第四个菜单</div>
+                <div class="inner">
+                    <div>aaa</div>
+                    <div>bbb</div>
+                    <div>ccc</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <a href="./test.html">hello world</a>
+
+
+    <div id="aaaa">
+        aaaaa
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('.item').on('click',function(ev) {
+            if($(this).attr('class').indexOf('active') >= 0) {
+                $(this).animate({'height':'50px'},500).attr('class','item');
+            }else {
+                $(this).animate({'height':'200px'},500).attr('class','active item').siblings().animate({'height':'50px'},500).attr('class','item')
+            }
+        })
+        $('.inner').on('click',function(ev){
+            return false;
+        })
+    })
+
+    $('#aaaa').click(()=>{
+        alert($(this).text())
+        console.log(this)
+    })
+    $('#aaaa').click(function(){
+        alert($(this).text())
+        console.log(this)
+    })
+
+    var foo = function(){
+        console.log(b)
+    }
+    var b = 2;
+    foo();
+</script>
+</html>
